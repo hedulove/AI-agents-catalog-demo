@@ -1,0 +1,732 @@
+{
+  "Themes": [
+    {
+      "Theme": "Insights to Impact Engine: Analyze ‘single source of truth’ to identify early signals and suggest next steps",
+      "Business Requirements": "Real-Time Alerts & Early Warning System ",
+      "Description": "Surface industry, market, and performance shifts instantly through GenAI generated alerts and aggregate trend data from multiple time periods into a unified, current-state view to inform strategic brand and account decisions ",
+      "UX/UI": "",
+      "Agents": "• PPT/Brief Composer Agent - standardized storylines for alerts and MBR/QBR decks. \n• Notification Router Agent - role-aware routing, urgency levels, and throttling ",
+      "Intelligence_DS": "• Time series analysis for trend detection and forecasting.\n• Anomaly detection to identify significant shifts in data.\n• Simulation models to generate AI-driven scenarios and action plans",
+      "Intelligence_contextual": "",
+      "Data": "• Patient and HCP - Claims data and patient outcomes\n• HCP prescribing patterns, sales and account level data  \n• Market Access - Formulary changes , payer-level data \n• Commercial - account-level sales , market share trends \n• Field Insights - Customer feedback, call-plan attainment data \n• External publicly available data",
+      "ML / GenAI": ""
+    },
+    {
+      "Theme": "Insights to Impact Engine: Analyze ‘single source of truth’ to identify early signals and suggest next steps",
+      "Business Requirements": "HQ: ‘Insights to Impact' engine ",
+      "Description": "An AI-powered hub enabling second-level performance analysis (e.g., subnational deviations from the market), simulations, and the identification of early signals to uncover the “So What” behind performance drivers based on both quantitative and qualitative data (i.e. market research) to explain the “what” and “why”. \nGenerates AI-driven scenarios and action plans—the “Now What”—to guide next steps (e.g., identifying new brand opportunities)",
+      "UX/UI": "• View controls at the prompt level \n• Role-specific views based on user access permissions defined by governance policies '",
+      "Agents": "• Signal Detector Agent - continuously scans for subnational deviations, flags outliers, quantifies confidence \n• Driver Attribution Agent - performs multi-driver variance decomposition and SHAP-based driver ranking \n• Narrative Generator Agent (“So What”) - synthesizes insights into business-context summaries \n• Scenario Simulator Agent - runs AI-driven simulations for potential interventions and projects impacts",
+      "Intelligence_DS": "• Time series analysis for historical trend detection and past performance\n• Forecasting anomaly detection to identify significant shifts in data.\n• Predictive models to forecast future \nperformance and identify variances from expected outcomes",
+      "Intelligence_contextual": "",
+      "Data": "• Clinical & Regulatory - Clinical trials, regulatory updates \n• Patient and HCP - Claims data, patient outcomes, HCP prescribing \npatterns, sales and account level data  \n• Market Access - Formulary changes , payer-level data \n• Commercial - account-level sales , market share trends \n• Field Insights - Customer feedback, call-plan attainment data \n• Forecasting & Planning - Forecast data \n• Market research – research corpus \n• Field data  \n• Competitive Intelligence Data \n• External publicly available data ",
+      "ML / GenAI": ""
+    },
+    {
+      "Theme": "Insights to Impact Engine: Analyze ‘single source of truth’ to identify early signals and suggest next steps",
+      "Business Requirements": " Forecast variance analytics and simulation generator ",
+      "Description": "AI-delivered real-time, actionable insights, ability to articulate drivers of actuals vs forecast variance based on demand drivers and customer segments, and simulate what would need to be true to achieve forecast goals based on demand drivers and customer segment. ",
+      "UX/UI": "• Querying data\n• Navigating to sources\n• Providing next-step recommendations",
+      "Agents": "• For querying data, navigating to sources, and providing next-step recommendations.\n• Forecasting agent – Utilize external and internal data sources to deliver proactive alerts ",
+      "Intelligence_DS": "• Information retrieval and recommendation algorithms for next-step suggestion.",
+      "Intelligence_contextual": "",
+      "Data": "• Commercial account and customer segment & channel data – real time and historical performance \n• Unstructured commercial account - brand documents, reports, sales data, and claims data \n• Patient and HCP - Claims data, patient outcomes, HCP prescribing \npatterns, sales and account level data \n• Forecasting & Planning - Forecast data ",
+      "ML / GenAI": "• Recommendation algorithms for next-step suggestions "
+    },
+    {
+      "Theme": "Market Research: Search external sources and J&J’s \nmarket research corpus, identify \nresearch gaps and run scenarios with ‘digital twin’",
+      "Business Requirements": "Searchable market research at fingertips",
+      "Description": "AI Google Search” layered on J&J’s corpus of market research and external sources (e.g., PubMed, Open Evidence, Sermo, X, LinkedIn, patient forums, ad boards etc.) to automate reporting and slide generation, identify existing and emerging influencers, and monitor and assess changes in public data (e.g., clinical-trials.gov, open payments, etc.) ",
+      "UX/UI": "• Progressive drill-downs, one-click generation of executive summaries and PowerPoint slides \n• Thumbs-up/down on retrieved insights to improve relevance, analyst tagging for source reliability, model retraining, ability to query questions and topics, and the ability to choose date ranges and project names",
+      "Agents": "• Query orchestration agent to interpret user intent, data retrieval agents for each external source, \n• PII/PHI Redaction Agent: reusable pre-processing microservice. \n• Doc Intelligence Agent: OCR + layout parsing + table extraction. \n• Citation & Grounding Agent: verifies quoted spans exist in sources\n• Report generation agent – Generate reports based on data mining market research and Delta between last runs ",
+      "Intelligence_DS": "• Classify, cluster, and rank content. Detect emerging trends and shifts in sentiment. Support automated slide and report generation from queried results \n• Hybrid: Precalculated embeddings and clusters for known data sources, live inference for ad hoc queries or trend updates ",
+      "Intelligence_contextual": "• Knowledge graph for informing relationship between drug and content \n• Define query relevance rules, governance for data freshness, priority source weighting, and content trust scores \n• Model governance owned by HQ insights functions; review cycles for data refresh, taxonomy updates, and compliance",
+      "Data": "• Internal data - J&J market research & competitive intelligence corpus \n• External data - PubMed, clinicalTrial.gov, CMS, social media, news etc.",
+      "ML / GenAI": "• Domain adaptation via instruction-tuning on internal reports and PubMed abstracts \n• Fine-tuning on curated pharma-specific corpora \n• Domain-tuned LLM for retrieval-augmented summarization & report generation. \n• Smaller task models- classification (voice of patient/HCP), NER/linking, toxicity/safety filters."
+    },
+    {
+      "Theme": "Market Research: Search external sources and J&J’s \nmarket research corpus, identify \nresearch gaps and run scenarios with ‘digital twin’",
+      "Business Requirements": "Research Companion",
+      "Description": "Co-pilot to provide agentic guidance on what market research gaps exist, with recommendations on what approach, format, and parameters for the research are most appropriate.",
+      "UX/UI": "• Visual “gap maps” showing research completeness by topic or region​  \n• Users confirm or reject recommendations, continuous learning from selected vs. rejected study designs​ ",
+      "Agents": "• Workflow trigger: “Before approving a new study, check for duplication”​  \n• Suggest prebuilt research templates and vendors for the recommended design, auto-generate draft research brief for review​  \n• Prevent access to competitor-sensitive or restricted market data​  \n• API compliance with internal systems (e.g., ResearchOps)​ ",
+      "Intelligence_DS": "• Analyze existing studies to identify unaddressed KBQs or data gaps, recommend appropriate research methods, cluster similar studies​  \n• NLP-based semantic similarity and clustering, predictive recommendation engine, reinforcement learning​  \n• Precomputed embeddings for known documents, live reasoning agent for contextual recommendations (on-demand guidance)​  \n• Live: Competitor activity tracking and real-time market insight generation​  \n• RAG endpoints to power conversational research assistant ",
+      "Intelligence_contextual": "• Prioritize recommendations aligned with strategic imperatives, define criteria for what constitutes a “gap”​  \n• Approvals from humans before formal study recommendation, version control for model-driven study templates​  ",
+      "Data": "",
+      "ML / GenAI": "• Secondary models for classification (e.g., study type, therapeutic area, insight depth)​  \n• Fine-tuned on anonymized internal research briefs and executive summaries​  "
+    },
+    {
+      "Theme": "Market Research: Search external sources and J&J’s \nmarket research corpus, identify \nresearch gaps and run scenarios with ‘digital twin’",
+      "Business Requirements": "Synthetic Market \nResearch",
+      "Description": "AI driven ‘digital twin’ models automate insights generation (e.g., competitor activity, market trends) and HCP/ patient / consumer personas based on aggregated market research data, monitoring and summarizing of competitor behavior.",
+      "UX/UI": "• Integration with internal analytics portals or CRM dashboards​  \n• Human-in-the-loop validation that fine-tunes digital twin accuracy over time​\n• Integration with searchable market research",
+      "Agents": "\n• Persona Simulation Agent – Build and refine ‘digital twin’ personas based on market research​\n• Insight generation agent, competitor watch agent​  \n• Prompts and scheduled automated briefings​  \n• Automated detection of significant competitor events, recommendation of research focus areas​  \n• Restrict synthetic personas or simulations that could imply real HCP identity, isolate sensitive internal data from public model inference layers​ ",
+      "Intelligence_DS": "• Generate synthetic personas based on aggregate patterns, simulate “what-if” market scenarios, generate continuous insight narratives from live data feeds​  \n• Agent-based simulation and generative models, predictive time-series models for trend evolution, NLP summarization and topic clustering for real-time monitoring​  \n• Batch: Persona generation, synthetic data refresh, live: Competitor activity tracking and real-time market insight generation​  \n• Synthetic data validation (bias and drift checks), model registry with versioning and audit logs​ ",
+      "Intelligence_contextual": "• Prioritize markets or therapy areas with high strategic focus, define thresholds for synthetic model updates, establish confidence metrics for synthetic persona validity​  \n• Clear audit trail of synthetic persona generation logic​  \n• Compliance oversight for synthetic data creation​  \n• Ethical guidelines for persona use (simulation transparency, bias mitigation)​  ",
+      "Data": "• Competitor activity and social sentiment – social media, news, market reports, patient forums​ \n• J&J Market Research corpus ",
+      "ML / GenAI": "• Insight generation agent, competitor watch agent​  \n• Prompts and scheduled automated briefings​  \n• Automated detection of significant competitor events, recommendation of research focus areas​  \n• Restrict synthetic personas or simulations that could imply real HCP identity, isolate sensitive internal data from public model inference layers​ "
+    },
+    {
+      "Theme": "AI-enabled reporting  \nAutomates ad hoc presentation \ngeneration ",
+      "Business Requirements": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Description": "Automated AI-driven reports/slide creation – including the ability to review presentations with real-time updates/refreshes; Includes ability to build tailored analyses for key customers, with automated incorporation of the most recent data.",
+      "UX/UI": "",
+      "Agents": "• Significant shifts in industry, market, or performance data, such as changes in drug sales, clinical trial outcomes, or regulatory updates, user-defined thresholds for alerts, such as specific changes in market share  \n• Document integration agent to create, embed, and link editable Excel objects within PowerPoint slides dynamically, preserving full Excel functionality ",
+      "Intelligence_DS": "• Time series analysis for trend detection and forecasting\n• Anomaly detection to identify significant shifts in data\n• Generative models to create and update presentation slides",
+      "Intelligence_contextual": "",
+      "Data": "• MBR presentations -Templates and historical MBR (Monthly Business Review) presentation  \n• Generative models for creating and updating/editing presentation slides  ",
+      "ML / GenAI": "• Generative models for creating and updating/editing presentation slides  "
+    },
+    {
+      "Theme": "Copilot for intuitive data querying",
+      "Business Requirements": "Real-time querying of insights via copilot ",
+      "Description": "Query data utilizing voice or free text or copilot generated prompts to retrieve insights with “paper clip” navigation to correct source (e.g., ODP/DataLens dashboard), and next-step recommendations",
+      "UX/UI": "",
+      "Agents": "• Significant shifts in industry, market, or performance data, such as changes in drug sales, clinical trial outcomes, or regulatory updates, user-defined thresholds for alerts, such as specific changes in market share.\n• Insight retrieval agent - Fetch relevant data and dashboard links  ",
+      "Intelligence_DS": "• Time series analysis for trend detection and forecasting\n• Anomaly detection to identify significant shifts in data",
+      "Intelligence_contextual": "",
+      "Data": "• Have ability to sit on top of existing J&J dashboards as well as being stand alone ",
+      "ML / GenAI": ""
+    }
+  ],
+  "Q&A": [
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-Time Alerts & Early Warning System ",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "HQ: ‘Insights to Impact' engine ",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": " Forecast variance analytics and simulation generator ",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Searchable market research at fingertips",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Research Companion",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Synthetic Market \nResearch",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution?\na. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities\na. How have you done this in the past?\nb. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "Interactive Charts using Prompts",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "1. Of the Business Requirements shared above, please list the requirements that can be met with your solution. ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "2. Of the requirements your solution has the ability to meet, what percentage can be met with an off-the-shelf solution? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "a. Would any part of your solution be subcontracted to a known/existing partner to deliver? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "3. On a scale of 1-4, where a lower rate is little effort/people needed by J&J and a higher rate is having high utilization of J&J effort/people, how much J&J effort do you foresee would be needed to develop, implement and roll-out this initiative successfully?  a. 1 - Less than 25%, 2- More than 25% Less than 50%, 3- More than 50% Less than 75%, 4- More than 75%.",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "4. Describe you’re approach to User Adoption and Change Management activities ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "a. How have you done this in the past?  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "b. What are ways you can support J&J resources with rollout and implementation? ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "5. Can your solution be developed, deployed, and operated entirely within Johnson & Johnson Innovative Medicine’s environment and firewalls, ensuring J&J IM retains full ownership and control of all inputs and outputs, including the rights to store, reuse, modify, and govern them? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "6. Are there any external dependencies (third-party services, external hosting, or SaaS components)? If so, how is ownership and control maintained? (Y/N) ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "7. Can the solution be fully built, hosted, and operated in J&J IM–controlled infrastructure (on-premise or J&J‑approved cloud)? (Y/N)",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "8. Confirm that the solution does not use GPL, AGPL, or other copyleft licenses which impose reciprocal obligations. Identify open-source components used and confirm they are under permissive licenses only.  ",
+      "Solutions": "",
+      "Answers": ""
+    },
+    {
+      "Buisiness Requirement": "Real-time querying of insights via copilot ",
+      "Questions": "9. Please list which industry-standard design, safety and governance protocols your autonomous AI components adhere to: ",
+      "Solutions": "",
+      "Answers": ""
+    }
+  ],
+  "Existing Solutions": [
+    {
+      "Business Requirements": "Real-Time Alerts & Early Warning System ",
+      "Description": "Surface industry, market, and performance shifts instantly through GenAI generated alerts and aggregate trend data from multiple time periods into a unified, current-state view to inform strategic brand and account decisions ",
+      "Similar Solutions": "1. ADD A SOLUTION YOU BUILT BEFORE TO SOVE THE ISSUE AT HAND\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": "HQ: ‘Insights to Impact' engine ",
+      "Description": "An AI-powered hub enabling second-level performance analysis (e.g., subnational deviations from the market), simulations, and the identification of early signals to uncover the “So What” behind performance drivers based on both quantitative and qualitative data (i.e. market research) to explain the “what” and “why”. \nGenerates AI-driven scenarios and action plans—the “Now What”—to guide next steps (e.g., identifying new brand opportunities)",
+      "Similar Solutions": "1. ADD A SOLUTION YOU BUILT BEFORE TO SOVE THE ISSUE AT HAND\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": " Forecast variance analytics and simulation generator ",
+      "Description": "AI-delivered real-time, actionable insights, ability to articulate drivers of actuals vs forecast variance based on demand drivers and customer segments, and simulate what would need to be true to achieve forecast goals based on demand drivers and customer segment. ",
+      "Similar Solutions": "1. ADD A SOLUTION YOU BUILT BEFORE TO SOVE THE ISSUE AT HAND\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": "Searchable market research at fingertips",
+      "Description": "AI Google Search” layered on client data’s corpus of market research and external sources (e.g., PubMed, Open Evidence, Sermo, X, LinkedIn, patient forums, ad boards etc.) to automate reporting and slide generation, identify existing and emerging influencers, and monitor and assess changes in public data (e.g., clinical-trials.gov, open payments, etc.) ",
+      "Similar Solutions": "1. ADD A SOLUTION YOU BUILT BEFORE TO SOVE THE ISSUE AT HAND\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": "Research Companion",
+      "Description": "Co-pilot to provide agentic guidance on what market research gaps exist, with recommendations on what approach, format, and parameters for the research are most appropriate.",
+      "Similar Solutions": "1. ADD A SOLUTION YOU BUILT BEFORE TO SOVE THE ISSUE AT HAND\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": "Synthetic Market \nResearch",
+      "Description": "AI driven ‘digital twin’ models automate insights generation (e.g., competitor activity, market trends) and HCP/ patient / consumer personas based on aggregated market research data, monitoring and summarizing of competitor behavior.",
+      "Similar Solutions": "1. Synthetic Text Generation\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": "AI-generated \npresentations and \nautomated refreshes  ",
+      "Description": "Automated AI-driven reports/slide creation – including the ability to review presentations with real-time updates/refreshes; Includes ability to build tailored analyses for key customers, with automated incorporation of the most recent data.",
+      "Similar Solutions": "1. Interactive Charts using Prompts\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "1. Data Input - API, CSV, Excel\n2. Agent 1 - Gets the Data Input and provide an Output.\n3. Output is in JSON format.\n4. Agent 2 - Gets the ouput JSON data and creates the chart.\n5. Displayed on Streamlit ",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    },
+    {
+      "Business Requirements": "Real-time querying of insights via copilot ",
+      "Description": "Query data utilizing voice or free text or copilot generated prompts to retrieve insights with “paper clip” navigation to correct source (e.g., ODP/DataLens dashboard), and next-step recommendations",
+      "Similar Solutions": "1. ADD A SOLUTION YOU BUILT BEFORE TO SOVE THE ISSUE AT HAND\n2. \n3. ",
+      "Unnamed: 3": "",
+      "Solution 1 - High Level Architecture": "",
+      "Solution 2 - High Level Architecture": "",
+      "Solution 3 - High Level Architecture": ""
+    }
+  ]
+}

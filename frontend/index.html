@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agent Demo Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script>
+    (function () {
+      if (localStorage.getItem("catalog-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    (async function () {
+      const files = [
+        "/js/components/Shared.jsx",
+        "/js/demos/AllDemos.jsx",
+        "/js/app.jsx",
+      ];
+      for (const url of files) {
+        const res = await fetch(url);
+        const code = await res.text();
+        const { code: compiled } = Babel.transform(code, { presets: [["react", { runtime: "classic" }]] });
+        // eslint-disable-next-line no-eval
+        eval(compiled);
+      }
+    })();
+  </script>
+</body>
+</html>
